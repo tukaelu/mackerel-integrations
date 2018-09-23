@@ -170,6 +170,14 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
+aws-lambda-mock-context@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/aws-lambda-mock-context/-/aws-lambda-mock-context-3.2.1.tgz#c84fe6bdec8dedb2d5d6a5e1e8e43e4f12aae709"
+  dependencies:
+    moment "^2.10.5"
+    pinkie-defer "^1.0.0"
+    uuid "^3.0.1"
+
 aws-lambda@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/aws-lambda/-/aws-lambda-0.1.2.tgz#19b1585075df31679597b976a5f1def61f12ccee"
@@ -1265,7 +1273,7 @@ mocha@5.2.0:
     mkdirp "0.5.1"
     supports-color "5.4.0"
 
-moment@^2.22.2:
+moment@^2.10.5, moment@^2.22.2:
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
@@ -1482,6 +1490,10 @@ pathval@^1.0.0:
 pify@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
+
+pinkie-defer@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/pinkie-defer/-/pinkie-defer-1.0.0.tgz#78fcc22116c0da890ac92a808ad370888ded9421"
 
 pkg-dir@^3.0.0:
   version "3.0.0"
@@ -1953,7 +1965,7 @@ uuid@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 
-uuid@^3.2.1, uuid@^3.3.2:
+uuid@^3.0.1, uuid@^3.2.1, uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
 
