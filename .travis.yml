@@ -1,13 +1,13 @@
 language: node_js
 node_js:
-  - "8.10"
+- '8.10'
 cache:
   directories:
-    - node_modules
+  - node_modules
 install:
-  - yarn install
+- yarn install
 script:
-  - yarn test
+- yarn test
 notifications:
   slack:
-    secure: lf+KzsCFCF82ZEz7m1wZprUl00LCH+LYd1mybpjguG2ot6OIlhgtI07QpFHR4/cQIuSfIeDlENvnCaHhuFpzoKNtX2euvTKnPsGC7DpFaVsBQn3YmXPLB7nJEZQ/i4Dtd6U68WY5pbUvWoCBwuqstuGzDEauimqYBMfGF9DTzqQOrGLLibvav/hNm1C1fv4Ge/8IDHaqOsCq5gDRm7tvhL0+zB7SX6szzIF9DT2dwy3BfxJXzZg9/+C+1rb8Nca/Tvvj3uqLD/C3I9WxT8Zrgb+o756Qsb3YzUNREbZgjCGPq5tw/ys/7R6Ml8A3E43emYFjADyXlLMzKNJ3Y/bO745CvUkzA3QgMF/2Xqhdn9PbJ1D1HUKjzVvQ3xGRM2JbAjaJI+5rOJuujGaEU6Ok/5Dvp/di6fdrBlCxfGiPJXUeDOtE9HaTZSuG0VovVrYhjrX01y15byyGnYIxC7FTaXjc6mgAfXXTBjQkswL1LKpafzKsWtdHPrx/JN0J/fhLkhh5MY/XlmpDlyccOZ1lBkGrzOWjEpNptAbjO6L8mGBgtqBFW+ubnOXkXUkppy7VWQk+XO+6zLAF1e/SEsgciieBOtixmFAyLnPMI6S7el76Nf8vkAXe9PAF37vzamz8vHq2EJbvsuixDfvoj/qJj7IxiPc6MLaIcCOsiigjE6o=
+    secure: bKPjvJ7QdhJOGNwMFH6d4PgAjuFEMO70zbo6rVqYBLPexgRlnqzq7wG67DrxHO4b4sUVbFRNPa36WQZwsbECRTllRNxoUl38Hr9cOXWCJEnun/R3TC4TIwUuXVBWdvQ9jc6XpOxE5TmVnYgugqzPHFn84re+DZjasZ0XgIVl4eZZz+wVOVw9ffiXxsBDJ0z9fnhanG8KY/xsPTqMxHc+LiroO0+y1QH3+lrGB/WRQMrDiQk8lBTlflByD5lj+meWVlYHGtoTblZrVdVB3RCGUTkxS0U33vR97980V7PfWjdfeI2/aHx0hpafb/Om3P1ixBYl56Fhr9KCTepapv1FhVfpzkVlLlrEMHZG3Uj0cdKzawxR2zYsT9qQvMJ2K/vKH/3t1zsqlDWRZoMwkqdvkt4YKIqZKfwkbOJdpxXz02AdzA0T5lEUc8nj/dOKqTQbpk6FEOo1DA+gZLX2r5AhHq77vzWgmSF6TPCV+EnrSC/ikypnIh8HPbuc/Qnylny8J9BJhNjHh6527tj9U7Bw67Gjp04UdZMEorNvGMvSQpBJu0rQnWRMe+khdrwOmoA+QhdDmofzx4TR7ytSJCPbrCFEu+CkNQQzxTXnhj4eBwRGwNNs6xDJBan1liW/3cx122mYwAvSr5lWzwsFN+arlDXgiEygBhFWt3rY9l2iVsY=
