@@ -4,3 +4,12 @@ jspm_packages
 
 # Serverless directories
 .serverless
+
+# Webpack directories
+.webpack
+
+# TypeScript output directory
+.build
+
+# serverless.yml
+serverless.yml
