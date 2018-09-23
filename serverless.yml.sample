@@ -1,0 +1,27 @@
+service:
+  name: mackerel-integrations
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-plugin-typescript
+
+provider:
+  name: aws
+  region: ap-northeast-1
+  runtime: nodejs8.10
+  memorySize: 128
+
+functions:
+  analytics:
+    handler: handlers/analytics.run
+    environment:
+      GA_PRIVATE_KEY: ""
+      GA_CLIENT_EMAIL: ""
+      GA_VIEW_ID: ""
+      MACKEREL_API_KEY: ""
+      MACKEREL_SERVICE_NAME: ""
+      MACKEREL_METRIC_NAME: ""
+    events:
+      - schedule:
+          rate: rate(1 minute)
+          enabled: true

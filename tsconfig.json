@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "target": "es6",
     "lib": [
-      "esnext"
+      "es6",
+      "es2015.promise"
     ],
-    "moduleResolution": "node"
-  },
-  "exclude": [
-    "node_modules"
-  ]
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "target": "es6",
+    "outDir": ".build",
+    "moduleResolution": "node",
+    "rootDir": "./",
+    "module": "commonjs"
+  }
 }
