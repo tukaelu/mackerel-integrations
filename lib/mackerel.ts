@@ -1,14 +1,7 @@
 import axios, { AxiosInstance } from "axios";
 
-const Origin: string = "https://mackerel.io/"
-const ContentType: string = "application/json"
-
-const MackerelApiConfig = {
-  baseURL: Origin,
-  headers: {
-    'Content-Type': ContentType
-  }
-}
+export const Origin: string = "https://mackerel.io/"
+export const ContentType: string = "application/json"
 
 export default class Mackerel {
 
@@ -18,19 +11,20 @@ export default class Mackerel {
   constructor(apiKey: string) {
     this.apiKey = apiKey
     this.axios = axios.create({
-      ...MackerelApiConfig,
-      headers: { 'X-Api-Key': this.apiKey }
+      baseURL: Origin,
+      headers: {
+        'Content-Type': ContentType,
+        'X-Api-Key': this.apiKey
+      }
     })
   }
 
-  async postServiceMetric(payload: any, serviceName: string) {
-    const config = {
+  async postServiceMetric(payload: any, serviceName: string): Promise<any> {
+    const requestConfig = {
+      method: 'post',
+      url: `/api/v0/services/${serviceName}/tsdb`,
       data: payload
     }
-    return await this.axios.post(`/api/v0/services/${serviceName}/tsdb`, config)
-  }
-
-  getAxiosInstance(): AxiosInstance {
-    return this.axios
+    return await this.axios.request(requestConfig)
   }
 }
