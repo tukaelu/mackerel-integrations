@@ -170,7 +170,7 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
-aws-lambda-mock-context@^3.2.1:
+aws-lambda-mock-context@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/aws-lambda-mock-context/-/aws-lambda-mock-context-3.2.1.tgz#c84fe6bdec8dedb2d5d6a5e1e8e43e4f12aae709"
   dependencies:
