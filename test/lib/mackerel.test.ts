@@ -13,16 +13,14 @@ describe('Mackerel client test', () => {
 
     const mackerel: Mackerel = new Mackerel(API_KEY)
 
-    before(() => {
-      nock(Origin)
-        .filteringRequestBody((body) => eval(body))
-        .post(`/api/v0/services/${SERVICE_NAME}/tsdb`, [{
-          name: 'METRIC_NAME',
-          time: 0,
-          value: 123
-        }])
+    nock(Origin)
+      .filteringRequestBody((body) => eval(body))
+      .post(`/api/v0/services/${SERVICE_NAME}/tsdb`, [{
+        name: 'METRIC_NAME',
+        time: 0,
+        value: 123
+      }])
         .reply(200, { success: true })
-    })
 
     it('post metric succeeded', async () => {
       const payload = [{
