@@ -25,3 +25,11 @@ functions:
       - schedule:
           rate: rate(1 minute)
           enabled: true
+
+  hatebu.total-bookmarks:
+    handler: handlers/hatebu-total-bookmarks.run
+    environment:
+      BOOKMARK_URL: ""
+      MACKEREL_API_KEY: ""
+      MACKEREL_SERVICE_NAME: ""
+      MACKEREL_METRIC_NAME: ""
