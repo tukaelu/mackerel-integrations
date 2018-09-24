@@ -13,55 +13,54 @@ process.env.MACKEREL_SERVICE_NAME = "analytics_test"
 process.env.MACKEREL_METRIC_NAME = "GoogleAnalytics.activeUser"
 
 import { run, getParams } from "../handlers/analytics";
+import { Origin as Mackerel_Origin } from "../lib/mackerel";
 
 describe('Google Analytics Handler', () => {
 
-  before(() => {
-    // mock google api
-    nock('https://www.googleapis.com')
-      .filteringRequestBody(body => '*')
-      .post('/oauth2/v4/token', '*')
-        .reply(200, {
-          access_token: 'access_token',
-          expiry_date: 0,
-          id_token: undefined,
-          refresh_token: 'jwt-placeholder'
-        })
-      .get('/analytics/v3/data/realtime')
-        .query({
-          'ids': 'ga:12345678',
-          'start-date': 'today',
-          'end-date': 'today',
-          'metrics': 'rt:activeUsers'
-        })
-        .reply(200, {
-          kind: 'analytics#realtimeData',
-          id: 'https://www.googleapis.com/analytics/v3/data/realtime?ids=ga:12345678&metrics=rt:activeUsers',
-          query: { ids: 'ga:12345678', metrics: [], 'max-results': 1000 },
-          totalResults: 1,
-          selfLink: 'https://www.googleapis.com/analytics/v3/data/realtime?ids=ga:12345678&metrics=rt:activeUsers',
-          profileInfo: {
-            profileName: 'すべてのウェブサイトのデータ',
-            tableId: 'realtime:12345678'
-          },
-          totalsForAllResults: { 'rt:activeUsers': '123' },
+  // mock google api
+  nock('https://www.googleapis.com')
+    .filteringRequestBody(body => '*')
+    .post('/oauth2/v4/token', '*')
+      .reply(200, {
+        access_token: 'access_token',
+        expiry_date: 0,
+        id_token: undefined,
+        refresh_token: 'jwt-placeholder'
+      })
+    .get('/analytics/v3/data/realtime')
+      .query({
+        'ids': 'ga:12345678',
+        'start-date': 'today',
+        'end-date': 'today',
+        'metrics': 'rt:activeUsers'
+      })
+      .reply(200, {
+        kind: 'analytics#realtimeData',
+        id: 'https://www.googleapis.com/analytics/v3/data/realtime?ids=ga:12345678&metrics=rt:activeUsers',
+        query: { ids: 'ga:12345678', metrics: [], 'max-results': 1000 },
+        totalResults: 1,
+        selfLink: 'https://www.googleapis.com/analytics/v3/data/realtime?ids=ga:12345678&metrics=rt:activeUsers',
+        profileInfo: {
+          profileName: 'すべてのウェブサイトのデータ',
+          tableId: 'realtime:12345678'
+        },
+        totalsForAllResults: { 'rt:activeUsers': '123' },
         })
 
-    // mock mackerel api
-    const scope = nock('https://mackerel.io/')
-      .filteringRequestBody(body => {
-        let a = eval(body)[0]
-        delete a.time
-        return a
-      })
-      .post(`/api/v0/services/${process.env.MACKEREL_SERVICE_NAME}/tsdb`, {
-        name: 'GoogleAnalytics.activeUser',
-        value: 123
-      })
+  // mock mackerel api
+  nock(Mackerel_Origin)
+    .filteringRequestBody(body => {
+      let a = eval(body)[0]
+      delete a.time
+      return a
+    })
+    .post(`/api/v0/services/${process.env.MACKEREL_SERVICE_NAME}/tsdb`, {
+      name: process.env.MACKEREL_METRIC_NAME,
+      value: 123
+    })
       .reply(200, { success: true })
-  })
 
-  it('pass getParams', () => {
+  it('pass getParams', async () => {
     const params = getParams()
     assert.equal(params.ids, 'ga:12345678')
   })
