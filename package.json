@@ -9,7 +9,7 @@
   "dependencies": {
     "aws-lambda": "^0.1.2",
     "axios": "^0.18.0",
-    "googleapis": "^33.0.0",
+    "googleapis": "^34.0.0",
     "moment": "^2.22.2"
   },
   "devDependencies": {
