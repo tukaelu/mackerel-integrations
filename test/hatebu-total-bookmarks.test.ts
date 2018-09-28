@@ -40,11 +40,12 @@ describe('Hatena bookmark Handler', () => {
       .reply(200, { success: true })
 
   it('', async () => {
-    const context: Context = MockContext(),
-          callback: Callback = () => {}
+    const context: Context = MockContext()
 
-    const res = await run('test', context, callback)
-    assert.strictEqual(res.status, 200)
-    assert.strictEqual(res.data.success, true)
+    await run('test', context, (err, result) => {
+      assert.isNull(err)
+      assert.strictEqual(result.status, 200)
+      assert.strictEqual(result.data.success, true)
+    })
   })
 })
