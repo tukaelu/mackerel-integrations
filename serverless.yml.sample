@@ -33,3 +33,15 @@ functions:
       MACKEREL_API_KEY: ""
       MACKEREL_SERVICE_NAME: ""
       MACKEREL_METRIC_NAME: ""
+
+  nature-remo:
+    handler: handlers/nature-remo.run
+    environment:
+      ACCESS_TOKEN: ""
+      MACKEREL_API_KEY: ""
+      MACKEREL_SERVICE_NAME: ""
+      MACKEREL_METRIC_NAME: ""
+    events:
+      - schedule:
+          rate: rate(5 minutes)
+          enabled: true
