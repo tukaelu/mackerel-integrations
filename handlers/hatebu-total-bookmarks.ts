@@ -32,5 +32,5 @@ export const run: Handler =
 
     const mackerel: Mackerel = new Mackerel(env.MACKEREL_API_KEY)
     const response = await mackerel.postServiceMetric(payload, env.MACKEREL_SERVICE_NAME)
-    callback(null, response)
+    callback(null, response.data)
   }
