@@ -44,8 +44,7 @@ describe('Hatena bookmark Handler', () => {
 
     await run('test', context, (err, result) => {
       assert.isNull(err)
-      assert.strictEqual(result.status, 200)
-      assert.strictEqual(result.data.success, true)
+      assert.strictEqual(result.success, true)
     })
   })
 })
