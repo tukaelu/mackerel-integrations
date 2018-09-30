@@ -2,6 +2,7 @@ import { Handler, Context, Callback } from "aws-lambda";
 import { CloudWatch } from "aws-sdk";
 import { GetMetricStatisticsInput } from "aws-sdk/clients/cloudwatch";
 import * as moment from "moment";
+
 import Mackerel, { MackerelEnvironments } from "../../lib/mackerel";
 
 export const AWS_SERVICES: Array<string> = [
