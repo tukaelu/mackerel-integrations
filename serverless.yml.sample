@@ -12,6 +12,15 @@ provider:
   memorySize: 128
 
 functions:
+  aws-billing:
+    handler: handlers/aws/billing.run
+    environment:
+      MACKEREL_SERVICE_NAME: ""
+    events:
+      - schedule:
+          rate: rate(30 minutes)
+          enabled: true
+
   analytics:
     handler: handlers/analytics.run
     environment:
