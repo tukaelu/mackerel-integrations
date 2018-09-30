@@ -2,16 +2,14 @@ import { Handler, Context, Callback } from "aws-lambda";
 import Axios from "axios";
 import * as moment from "moment";
 
-import Mackerel from "../lib/mackerel";
+import Mackerel, { MackerelEnvironments } from "../lib/mackerel";
 
 export const Origin: string = 'http://api.b.st-hatena.com'
 export const Endpoint: string = '/entry.total_count'
 
 const env = {
   BOOKMARK_URL: '',
-  MACKEREL_API_KEY: '',
-  MACKEREL_SERVICE_NAME: '',
-  MACKEREL_METRIC_NAME: '',
+  ...MackerelEnvironments,
   ...process.env
 }
 

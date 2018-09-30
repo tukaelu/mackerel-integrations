@@ -2,7 +2,7 @@ import { Handler, Context, Callback } from "aws-lambda";
 import Axios, { AxiosResponse } from "axios";
 import * as moment from "moment";
 
-import Mackerel from "../lib/mackerel";
+import Mackerel, { MackerelEnvironments } from "../lib/mackerel";
 
 export interface Device {
   id: string;
@@ -35,8 +35,7 @@ export const run: Handler =
 
     const env = {
       ACCESS_TOKEN: '',
-      MACKEREL_API_KEY: '',
-      MACKEREL_SERVICE_NAME: '',
+      ...MackerelEnvironments,
       MACKEREL_METRIC_NAME: 'custom.NatureRemo',
       ...process.env
     }

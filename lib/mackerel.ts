@@ -3,6 +3,12 @@ import axios, { AxiosInstance } from "axios";
 export const Origin: string = "https://mackerel.io/"
 export const ContentType: string = "application/json"
 
+export const MackerelEnvironments: any = {
+  MACKEREL_API_KEY: '',
+  MACKEREL_SERVICE_NAME: '',
+  MACKEREL_METRIC_NAME: ''
+}
+
 export default class Mackerel {
 
   private apiKey: string
