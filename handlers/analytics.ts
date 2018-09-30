@@ -3,7 +3,7 @@ import { google, analytics_v3 } from "googleapis";
 import { JWT } from "google-auth-library";
 import * as moment from "moment";
 
-import Mackerel from "../lib/mackerel";
+import Mackerel, { MackerelEnvironments } from "../lib/mackerel";
 
 const REQUESTED_SCOPES = [
   "https://www.googleapis.com/auth/analytics.readonly"
@@ -13,9 +13,7 @@ const env = {
   GA_PRIVATE_KEY: '',
   GA_CLIENT_EMAIL: '',
   GA_VIEW_ID: '',
-  MACKEREL_API_KEY: '',
-  MACKEREL_SERVICE_NAME: '',
-  MACKEREL_METRIC_NAME: '',
+  ...MackerelEnvironments,
   ...process.env
 }
 

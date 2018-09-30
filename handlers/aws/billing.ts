@@ -2,7 +2,8 @@ import { Handler, Context, Callback } from "aws-lambda";
 import { CloudWatch } from "aws-sdk";
 import { GetMetricStatisticsInput } from "aws-sdk/clients/cloudwatch";
 import * as moment from "moment";
-import Mackerel from "../../lib/mackerel";
+
+import Mackerel, { MackerelEnvironments } from "../../lib/mackerel";
 
 export const AWS_SERVICES: Array<string> = [
   'AmazonApiGateway',
@@ -31,8 +32,7 @@ export const run: Handler =
 
     const env = {
       ACCESS_TOKEN: '',
-      MACKEREL_API_KEY: '',
-      MACKEREL_SERVICE_NAME: '',
+      ...MackerelEnvironments,
       MACKEREL_METRIC_NAME: 'custom.AWS.billing',
       ...process.env
     }
