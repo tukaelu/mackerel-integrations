@@ -10,7 +10,7 @@
     "aws-lambda": "^0.1.2",
     "aws-sdk": "^2.325.0",
     "axios": "^0.18.0",
-    "googleapis": "^34.0.0",
+    "googleapis": "^35.0.0",
     "moment": "^2.22.2"
   },
   "devDependencies": {
