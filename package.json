@@ -17,7 +17,7 @@
     "@types/aws-lambda": "8.10.39",
     "@types/chai": "4.2.7",
     "@types/mocha": "5.2.7",
-    "@types/node": "8.10.36",
+    "@types/node": "8.10.59",
     "aws-lambda-mock-context": "3.2.1",
     "chai": "4.2.0",
     "mocha": "5.2.0",
