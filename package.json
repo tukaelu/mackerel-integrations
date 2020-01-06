@@ -20,7 +20,7 @@
     "@types/node": "8.10.59",
     "aws-lambda-mock-context": "3.2.1",
     "chai": "4.2.0",
-    "mocha": "6.2.2",
+    "mocha": "7.0.0",
     "nock": "11.7.1",
     "nyc": "15.0.0",
     "serverless-plugin-typescript": "1.1.9",
