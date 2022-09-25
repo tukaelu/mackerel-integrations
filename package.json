@@ -15,11 +15,11 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.39",
-    "@types/chai": "4.2.7",
+    "@types/chai": "4.3.3",
     "@types/mocha": "5.2.7",
     "@types/node": "8.10.59",
     "aws-lambda-mock-context": "3.2.1",
-    "chai": "4.2.0",
+    "chai": "4.3.6",
     "mocha": "7.0.0",
     "nock": "11.7.2",
     "nyc": "15.0.0",
