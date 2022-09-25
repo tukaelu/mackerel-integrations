@@ -14,7 +14,7 @@
     "moment": "^2.22.2"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.39",
+    "@types/aws-lambda": "8.10.106",
     "@types/chai": "4.2.7",
     "@types/mocha": "5.2.7",
     "@types/node": "8.10.59",
